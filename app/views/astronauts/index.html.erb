@@ -1,0 +1,21 @@
+<h1>All Astronauts</h1>
+
+
+<% @astronauts.each do |astronaut|  %>
+  <ul>
+    <section id="astronaut-<%= astronaut.id %>">
+      <li><%= astronaut.name %></li>
+      <li><%= astronaut.age %></li>
+      <li><%= astronaut.job %></li>
+      <li><%= astronaut.time_in_space %></li>
+        <ul>
+          <% astronaut.sort.each do |mission| %>
+            <li><%= mission.title %></li>
+            <li><%= mission.time_in_space %></li>
+          <%end %>
+        </ul>
+  </ul>
+<% end  %>
+
+
+<h3>Average Age: <%= @average %></h3>
